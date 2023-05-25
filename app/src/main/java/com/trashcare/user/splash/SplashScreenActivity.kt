@@ -5,8 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.trashcare.user.MainActivity
 import com.trashcare.user.R
+import com.trashcare.user.ui.onboard.OnboardPageActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
@@ -16,7 +16,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         Handler().postDelayed({
-            val mainIntent = Intent(this, MainActivity::class.java)
+            val mainIntent = Intent(this, OnboardPageActivity::class.java)
             startActivity(mainIntent)
             finish()
         }, 3000)

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#47CE79"
+    android:background="@color/green_500"
     tools:context=".splash.SplashScreenActivity">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:fontFamily="@font/poppins_bold"
         android:gravity="top"
-        android:text="TrashCare"
+        android:text="@string/trashcare_splash"
         android:textColor="@color/white"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
