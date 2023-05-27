@@ -1,10 +1,14 @@
+@file:Suppress("DEPRECATION")
+
 package com.trashcare.user.ui.onboard
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.trashcare.user.MainActivity
+import android.view.Window
+import android.view.WindowManager
 import com.trashcare.user.databinding.ActivityOnboardPageBinding
+import com.trashcare.user.ui.inputdata.InputDataActivity
 
 class OnboardPageActivity : AppCompatActivity() {
 
@@ -16,7 +20,7 @@ class OnboardPageActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnGetStarted.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, InputDataActivity::class.java)
             startActivity(intent)
         }
     }

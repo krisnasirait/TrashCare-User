@@ -3,4 +3,13 @@
     <string name="trashcare_splash">TrashCare</string>
     <string name="onboard_text">Earn from \nyour waste.</string>
     <string name="button_onboard">Get started</string>
+    <string name="text_inputdata">Sebelum lanjut, Masukan Datamu terlebih dahulu !</string>
+    <string name="tv_name">Nama</string>
+    <string name="hint_name">Masukan nama anda</string>
+    <string name="tv_noPhone">No Telepon</string>
+    <string name="hint_nophone">Masukan No Telepon anda</string>
+    <string name="tv_norekening">No Rekening</string>
+    <string name="hint_rekening">Masukan No Rekening Anda</string>
+    <string name="submit_data">Submit</string>
+    <string name="tv_check">Pastikan data yang di input sudah benar ya!</string>
 </resources>
