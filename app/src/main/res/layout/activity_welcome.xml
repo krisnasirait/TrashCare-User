@@ -57,7 +57,6 @@
         android:layout_width="164dp"
         android:layout_height="37dp"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="20dp"
         android:background="@drawable/button_rounded"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/txt_btnSendTrash"

@@ -9,6 +9,7 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.trashcare.user.MainActivity
 import com.trashcare.user.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {
@@ -22,6 +23,11 @@ class WelcomeActivity : AppCompatActivity() {
 
         binding.btnDetectionTrash.setOnClickListener {
             openCamera()
+        }
+
+        binding.btnSendTrash.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
         if (!allPermissionsGranted()) {
