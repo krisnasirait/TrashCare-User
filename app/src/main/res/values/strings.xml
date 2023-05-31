@@ -12,4 +12,9 @@
     <string name="hint_rekening">Masukan No Rekening Anda</string>
     <string name="submit_data">Submit</string>
     <string name="tv_check">Pastikan data yang di input sudah benar ya!</string>
+    <string name="tv_welcome">Hi! Selamat Datang\ndi Trasch Care</string>
+    <string name="tv_addtrash">Kirim Sampahmu disini</string>
+    <string name="txt_btnSendTrash">Kirim Sampah</string>
+    <string name="tv_detection">Deteksi sampahmu disini</string>
+    <string name="txt_btnDetectionTrash">Deteksi Sampah</string>
 </resources>
