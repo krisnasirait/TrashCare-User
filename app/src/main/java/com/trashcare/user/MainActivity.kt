@@ -2,10 +2,31 @@ package com.trashcare.user
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.addCallback
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.trashcare.user.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
+
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val navView: BottomNavigationView = binding.bottomNavigation
+        val navController = findNavController(R.id.nav_host_fragment)
+
+        navView.setupWithNavController(navController)
+
+        onBackPressedDispatcher.addCallback(this) {
+            finishAffinity()
+        }
+
     }
 }
