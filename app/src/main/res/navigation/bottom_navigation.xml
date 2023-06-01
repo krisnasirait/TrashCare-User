@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_navigation"
-    app:startDestination="@id/menu_home">
+    app:startDestination="@id/action_home">
 
     <fragment
-        android:id="@+id/menu_home"
+        android:id="@+id/action_home"
         android:name="com.trashcare.user.ui.fragment.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home"/>
 
     <fragment
-        android:id="@+id/menu_camera"
+        android:id="@+id/action_camera"
         android:name="com.trashcare.user.ui.fragment.CameraFragment"
         android:label="Camera"
         tools:layout="@layout/fragment_camera"/>
 
     <fragment
-        android:id="@+id/menu_history"
+        android:id="@+id/action_history"
         android:name="com.trashcare.user.ui.fragment.HistoryFragment"
         android:label="History"
         tools:layout="@layout/fragment_history"/>
