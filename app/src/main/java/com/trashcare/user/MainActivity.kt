@@ -24,9 +24,6 @@ class MainActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navController)
 
-        onBackPressedDispatcher.addCallback(this) {
-            finishAffinity()
-        }
 
     }
 }
