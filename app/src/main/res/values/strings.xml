@@ -26,4 +26,7 @@
     <string name="hello">Hello</string>
     <string name="welcome_to_trash_care">Welcome To Trash Care</string>
     <string name="let_s_recycle">Let\'s Recycle!</string>
+    <string name="txt_desc_trash">Trash Care menerima botol plastik untuk di daur ulang</string>
+    <string name="title_trash_botle_plasstic">Botol Plastik</string>
+    <string name="txt_detail_button_trash">Detail</string>
 </resources>

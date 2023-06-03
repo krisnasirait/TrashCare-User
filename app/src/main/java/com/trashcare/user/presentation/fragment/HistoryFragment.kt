@@ -1,4 +1,4 @@
-package com.trashcare.user.ui.fragment
+package com.trashcare.user.presentation.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

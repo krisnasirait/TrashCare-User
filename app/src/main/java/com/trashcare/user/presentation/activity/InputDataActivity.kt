@@ -1,10 +1,9 @@
-package com.trashcare.user.ui.inputdata
+package com.trashcare.user.presentation.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.trashcare.user.databinding.ActivityInputDataBinding
-import com.trashcare.user.ui.welcome.WelcomeActivity
 
 class InputDataActivity : AppCompatActivity() {
     private lateinit var binding  : ActivityInputDataBinding

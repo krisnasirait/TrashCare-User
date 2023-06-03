@@ -1,4 +1,4 @@
-package com.trashcare.user.splash
+package com.trashcare.user.presentation.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.trashcare.user.R
-import com.trashcare.user.ui.onboard.OnboardPageActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {

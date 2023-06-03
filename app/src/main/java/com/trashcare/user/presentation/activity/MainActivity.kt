@@ -1,11 +1,11 @@
-package com.trashcare.user
+package com.trashcare.user.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.addCallback
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.trashcare.user.R
 import com.trashcare.user.databinding.ActivityMainBinding
 
 

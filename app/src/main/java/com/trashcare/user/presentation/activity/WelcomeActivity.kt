@@ -1,4 +1,4 @@
-package com.trashcare.user.ui.welcome
+package com.trashcare.user.presentation.activity
 
 import android.Manifest
 import android.content.Intent
@@ -9,7 +9,6 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.trashcare.user.MainActivity
 import com.trashcare.user.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {
