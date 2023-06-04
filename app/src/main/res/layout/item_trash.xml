@@ -15,18 +15,18 @@
             android:id="@+id/iv_trash"
             android:layout_width="92dp"
             android:layout_height="110dp"
-            android:src="@drawable/plastic_bottles_img"
+            tools:src="@tools:sample/avatars"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_trash"
+            android:id="@+id/tv_title_trash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
             android:layout_marginStart="25dp"
-            android:text="@string/title_trash_botle_plasstic"
+            tools:text="@string/title_trash_botle_plasstic"
             android:textSize="13sp"
             app:layout_constraintStart_toEndOf="@+id/iv_trash"
             tools:ignore="MissingConstraints" />
@@ -34,14 +34,14 @@
         <TextView
             android:id="@+id/tv_trash_desc"
             android:layout_width="179dp"
-            android:layout_height="32dp"
+            android:layout_height="35dp"
             android:layout_marginTop="10dp"
             android:layout_marginStart="25dp"
             android:fontFamily="@font/poppins_regular"
             android:textSize="12sp"
-            android:text="@string/txt_desc_trash"
+            tools:text="@string/txt_desc_trash"
             app:layout_constraintStart_toEndOf="@+id/iv_trash"
-            app:layout_constraintTop_toBottomOf="@+id/tv_trash" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_trash" />
 
 
         <Button

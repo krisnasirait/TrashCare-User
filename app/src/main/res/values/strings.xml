@@ -29,4 +29,5 @@
     <string name="txt_desc_trash">Trash Care menerima botol plastik untuk di daur ulang</string>
     <string name="title_trash_botle_plasstic">Botol Plastik</string>
     <string name="txt_detail_button_trash">Detail</string>
+    <string name="total_pcs_trash">Total Pcs = %d</string>
 </resources>
