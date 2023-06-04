@@ -15,7 +15,9 @@ import com.trashcare.user.presentation.adapter.TrashListAdapter
 
 
 @Suppress("DEPRECATION")
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(
+
+) {
 
     private var _binding: FragmentHomeBinding?= null
     private val binding get() = _binding!!
@@ -36,7 +38,11 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         rvTrash = binding.rvTrash
-        val itemAdapter = TrashListAdapter(dummyTrashList)
+        val itemAdapter = TrashListAdapter(dummyTrashList, object : TrashListAdapter.OnTrashAmountChangeListener {
+            override fun onTrashAmountChange(totalAmount: Int) {
+                binding.tvTotalTrash.text = totalAmount.toString()
+            }
+        })
         rvTrash.adapter = itemAdapter
         rvTrash.layoutManager = LinearLayoutManager(requireActivity())
 

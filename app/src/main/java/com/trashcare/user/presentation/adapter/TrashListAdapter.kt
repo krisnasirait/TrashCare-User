@@ -6,10 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.trashcare.user.data.DataListTrash.TrashList
 import com.trashcare.user.databinding.ItemTrashBinding
 
-class TrashListAdapter(private val listTrash: List<TrashList>) : RecyclerView.Adapter<TrashListAdapter.ListViewHolder>() {
+class TrashListAdapter(
+    private val listTrash: List<TrashList>,
+    //bikin interface baru buat detect perubahan amount sampahnya
+    private val trashAmountChangeListener: OnTrashAmountChangeListener
+) : RecyclerView.Adapter<TrashListAdapter.ListViewHolder>() {
 
-    class ListViewHolder(private var binding: ItemTrashBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: TrashList) {
+    //biasain view holder selalu inner class, bukan class biasa
+    inner class ListViewHolder(private var binding: ItemTrashBinding): RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: TrashList, trashAmountChangeListener: OnTrashAmountChangeListener) {
             var currentValue = item.count
 
             binding.ivTrash.setImageResource(item.photo)
@@ -19,19 +24,30 @@ class TrashListAdapter(private val listTrash: List<TrashList>) : RecyclerView.Ad
 
             binding.btnPlus.setOnClickListener {
                 currentValue ++
+                item.count = currentValue
                 binding.tvResult.text = currentValue.toString()
+                trashAmountChangeListener.onTrashAmountChange(getTotalTrashCount())
             }
 
             binding.btnMin.setOnClickListener {
                 if (currentValue > 0) {
                     currentValue--
+                    item.count = currentValue
                     binding.tvResult.text = currentValue.toString()
+                    trashAmountChangeListener.onTrashAmountChange(getTotalTrashCount())
                 }
             }
         }
     }
 
+    //count sum nya biasa
+    private fun getTotalTrashCount(): Int {
+        return listTrash.sumOf { it.count }
+    }
 
+    interface OnTrashAmountChangeListener {
+        fun onTrashAmountChange(totalAmount: Int)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val binding = ItemTrashBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -42,6 +58,6 @@ class TrashListAdapter(private val listTrash: List<TrashList>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val currentItem = listTrash[position]
-        holder.bind(currentItem)
+        holder.bind(currentItem, trashAmountChangeListener)
     }
 }

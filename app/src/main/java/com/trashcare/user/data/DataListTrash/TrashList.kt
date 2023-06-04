@@ -8,7 +8,7 @@ data class TrashList(
     val title: String,
     val description: String,
     val photo: Int,
-    val count: Int,
+    var count: Int,
 )
 
 val dummyTrashList = listOf(
