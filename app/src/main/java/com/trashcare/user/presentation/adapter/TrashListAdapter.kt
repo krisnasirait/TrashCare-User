@@ -5,17 +5,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.trashcare.user.data.DataListTrash.TrashList
 import com.trashcare.user.databinding.ItemTrashBinding
+import android.content.Intent
+import com.trashcare.user.presentation.activity.DetailTrashActivity
 
 class TrashListAdapter(
     private val listTrash: List<TrashList>,
     //bikin interface baru buat detect perubahan amount sampahnya
-    private val trashAmountChangeListener: OnTrashAmountChangeListener
+    private val trashAmountChangeListener: OnTrashAmountChangeListener,
 ) : RecyclerView.Adapter<TrashListAdapter.ListViewHolder>() {
 
     //biasain view holder selalu inner class, bukan class biasa
     inner class ListViewHolder(private var binding: ItemTrashBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: TrashList, trashAmountChangeListener: OnTrashAmountChangeListener) {
             var currentValue = item.count
+            val mContext = binding.root.context
 
             binding.ivTrash.setImageResource(item.photo)
             binding.tvTitleTrash.text = item.title
@@ -36,6 +39,14 @@ class TrashListAdapter(
                     binding.tvResult.text = currentValue.toString()
                     trashAmountChangeListener.onTrashAmountChange(getTotalTrashCount())
                 }
+            }
+
+            binding.btnDetailTrash.setOnClickListener {
+                val intent = Intent(mContext, DetailTrashActivity::class.java)
+                intent.putExtra(DetailTrashActivity.EXTRA_TITLE, item.title)
+                intent.putExtra(DetailTrashActivity.EXTRA_DESC, item.description)
+                intent.putExtra(DetailTrashActivity.EXTRA_PHOTO, item.photo)
+                mContext.startActivity(intent)
             }
         }
     }

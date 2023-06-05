@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.trashcare.user.R
 import com.trashcare.user.data.DataListTrash.dummyTrashList
 import com.trashcare.user.databinding.FragmentHomeBinding
 import com.trashcare.user.presentation.activity.DetailTrashActivity
@@ -38,9 +39,10 @@ class HomeFragment : Fragment(
         super.onViewCreated(view, savedInstanceState)
 
         rvTrash = binding.rvTrash
+        binding.tvTotalTrash.text = getString(R.string.total_pcs_trash_no_value)
         val itemAdapter = TrashListAdapter(dummyTrashList, object : TrashListAdapter.OnTrashAmountChangeListener {
             override fun onTrashAmountChange(totalAmount: Int) {
-                binding.tvTotalTrash.text = totalAmount.toString()
+                binding.tvTotalTrash.text = getString(R.string.total_pcs_trash, totalAmount)
             }
         })
         rvTrash.adapter = itemAdapter
