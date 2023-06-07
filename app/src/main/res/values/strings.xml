@@ -33,4 +33,12 @@
     <string name="total_pcs_trash_no_value">Total = 0 pcs </string>
     <string name="info_detail">*Pastikan pada saat memfoto sampah dengan jelas agar lebih mudah terdeteksi oleh sistem</string>
     <string name="desc">Deskripsi</string>
+    <string name="tv_login">Login</string>
+    <string name="email">Email</string>
+    <string name="email_hint">Masukan email anda</string>
+    <string name="password">Password</string>
+    <string name="hint_password">Masukan password anda</string>
+    <string name="dont_have_account">Belum punya akun?</string>
+    <string name="btn_login">Masuk</string>
+    <string name="regLog">Register!</string>
 </resources>
