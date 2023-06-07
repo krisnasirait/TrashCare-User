@@ -24,6 +24,9 @@
         android:theme="@style/Theme.TrashCareUser"
         tools:targetApi="31">
         <activity
+            android:name=".SendTrashActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.activity.DetailTrashActivity"
             android:exported="false" />
         <activity
