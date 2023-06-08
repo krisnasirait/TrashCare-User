@@ -42,4 +42,8 @@
     <string name="btn_login">Masuk</string>
     <string name="regLog">Register!</string>
     <string name="register">Register</string>
+    <string name="hint_addDesc">Tambahkan deskripsi disini</string>
+    <string name="select_trash_location">Pilih lokasi tempat sampah</string>
+    <string name="total_trash">Total Sampah</string>
+    <string name="send_trash">Kirim</string>
 </resources>

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.trashcare.user.R
 import com.trashcare.user.data.DataListTrash.dummyTrashList
 import com.trashcare.user.databinding.FragmentHomeBinding
-import com.trashcare.user.presentation.activity.DetailTrashActivity
+import com.trashcare.user.presentation.activity.SendTrashActivity
 import com.trashcare.user.presentation.adapter.TrashListAdapter
 
 
@@ -50,7 +50,7 @@ class HomeFragment : Fragment(
 
         binding.btnSendTrash.setOnClickListener {
 //            findNavController().navigate(R.id.home_to_camera)
-            val intent = Intent(requireActivity(), DetailTrashActivity::class.java)
+            val intent = Intent(requireActivity(), SendTrashActivity::class.java)
             startActivity(intent)
         }
     }
