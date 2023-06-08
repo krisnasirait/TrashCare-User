@@ -46,4 +46,5 @@
     <string name="select_trash_location">Pilih lokasi tempat sampah</string>
     <string name="total_trash">Total Sampah</string>
     <string name="send_trash">Kirim</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
