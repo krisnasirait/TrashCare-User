@@ -16,6 +16,7 @@ class SendTrashActivity : AppCompatActivity() {
 
 
         val markerData = intent.getStringExtra(MARKER_ADD)
+        val totalTrash = intent.getIntExtra("TOTAL_AMOUNT", 0)
 
         binding.btnSelectLocation.setOnClickListener {
             val intent = Intent(this, MapsActivity::class.java)
@@ -27,6 +28,8 @@ class SendTrashActivity : AppCompatActivity() {
         } else {
             binding.tvLocationTrash.text = resources.getString(R.string.no_location)
         }
+
+        binding.tvTotalPcsTrash.text = resources.getString(R.string.total_pcs_trash, totalTrash)
     }
 
     companion object {

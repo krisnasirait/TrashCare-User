@@ -12,13 +12,36 @@
 
     <ImageView
         android:id="@+id/previewImageView"
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_image_24" />
+        app:srcCompat="@drawable/baseline_image_24"
+        tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/btn_cameraX"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/camera_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/previewImageView"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Camera"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_cameraX"
+            app:layout_constraintStart_toStartOf="@+id/btn_cameraX"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cameraX" />
+
 
     <TextView
         android:id="@+id/tv_desc"
@@ -30,7 +53,7 @@
         android:text="@string/desc"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/previewImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_camera" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ed_addDesc"

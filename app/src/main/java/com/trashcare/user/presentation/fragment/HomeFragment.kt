@@ -23,6 +23,7 @@ class HomeFragment : Fragment(
     private var _binding: FragmentHomeBinding?= null
     private val binding get() = _binding!!
     private lateinit var rvTrash: RecyclerView
+    private var totalTrash: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,6 +44,7 @@ class HomeFragment : Fragment(
         val itemAdapter = TrashListAdapter(dummyTrashList, object : TrashListAdapter.OnTrashAmountChangeListener {
             override fun onTrashAmountChange(totalAmount: Int) {
                 binding.tvTotalTrash.text = getString(R.string.total_pcs_trash, totalAmount)
+                this@HomeFragment.totalTrash = totalAmount
             }
         })
         rvTrash.adapter = itemAdapter
@@ -51,6 +53,7 @@ class HomeFragment : Fragment(
         binding.btnSendTrash.setOnClickListener {
 //            findNavController().navigate(R.id.home_to_camera)
             val intent = Intent(requireActivity(), SendTrashActivity::class.java)
+            intent.putExtra("TOTAL_AMOUNT", totalTrash)
             startActivity(intent)
         }
     }
