@@ -47,4 +47,5 @@
     <string name="total_trash">Total Sampah</string>
     <string name="send_trash">Kirim</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="no_location">Tidak ada lokasi</string>
 </resources>
