@@ -48,4 +48,8 @@
     <string name="send_trash">Kirim</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="no_location">Tidak ada lokasi</string>
+
+    <string name="failedToTakePic">Failed to take a picture</string>
+    <string name="failShowCamera">Failed to show camera.</string>
+
 </resources>

@@ -10,21 +10,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/previewImageView"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="120dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_image_24"
-        tools:ignore="ContentDescription" />
+        <ImageView
+            android:id="@+id/previewImageView"
+            android:layout_width="387dp"
+            android:layout_height="456dp"
+            android:layout_marginTop="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_image_24"
+            tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/btn_cameraX"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="20dp"
             android:src="@drawable/camera_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
