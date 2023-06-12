@@ -3,6 +3,7 @@ package com.trashcare.user.presentation.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.trashcare.user.R
 import com.trashcare.user.data.model.request.RegisterRequestBody
@@ -63,7 +64,15 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         authViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
+    }
 
+    private fun showLoading(isLoading:Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.VISIBLE
         }
     }
 }
