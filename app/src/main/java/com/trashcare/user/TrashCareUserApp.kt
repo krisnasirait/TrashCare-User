@@ -3,9 +3,12 @@ package com.trashcare.user
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
+import com.trashcare.user.data.remote.ApiService
+import com.tanitama.green.data.remote.RetrofitClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext
+import org.koin.dsl.module
 
 class TrashCareUserApp : Application() {
 
@@ -18,9 +21,13 @@ class TrashCareUserApp : Application() {
             androidLogger()
             androidContext(this@TrashCareUserApp)
             modules(
-                // TODO: add modules here
+                repositoryModule
             )
         }
+    }
+
+    private val repositoryModule = module {
+        single { RetrofitClient.createService<ApiService>() }
     }
 
     companion object {
