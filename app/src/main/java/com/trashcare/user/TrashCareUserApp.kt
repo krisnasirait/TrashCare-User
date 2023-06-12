@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
 import com.trashcare.user.data.remote.ApiService
-import com.tanitama.green.data.remote.RetrofitClient
+import com.trashcare.user.data.remote.RetrofitClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext

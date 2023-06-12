@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.trashcare.user.R
-import com.trashcare.user.data.DataListTrash.dummyTrashList
+import com.trashcare.user.data.model.trashlist.dummyTrashList
 import com.trashcare.user.databinding.FragmentHomeBinding
 import com.trashcare.user.presentation.activity.SendTrashActivity
 import com.trashcare.user.presentation.adapter.TrashListAdapter

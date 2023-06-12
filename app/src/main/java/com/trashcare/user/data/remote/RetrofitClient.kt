@@ -1,7 +1,5 @@
-package com.tanitama.green.data.remote
+package com.trashcare.user.data.remote
 
-import com.trashcare.user.data.remote.ApiListener
-import com.trashcare.user.data.remote.DefaultErrorHandler
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

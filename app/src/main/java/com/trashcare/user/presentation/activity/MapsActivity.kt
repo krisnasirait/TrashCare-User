@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
 import com.trashcare.user.R
-import com.trashcare.user.data.datalocation.dummyLocationTrash
+import com.trashcare.user.data.model.trashlocation.dummyLocationTrash
 import com.trashcare.user.databinding.ActivityMapsBinding
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {

@@ -3,9 +3,9 @@ package com.trashcare.user.presentation.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.trashcare.user.data.DataListTrash.TrashList
 import com.trashcare.user.databinding.ItemTrashBinding
 import android.content.Intent
+import com.trashcare.user.data.model.trashlist.TrashList
 import com.trashcare.user.presentation.activity.DetailTrashActivity
 
 class TrashListAdapter(
