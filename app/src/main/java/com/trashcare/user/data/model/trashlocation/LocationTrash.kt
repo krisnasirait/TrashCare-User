@@ -1,4 +1,4 @@
-package com.trashcare.user.data.datalocation
+package com.trashcare.user.data.model.trashlocation
 
 import com.google.android.gms.maps.model.LatLng
 

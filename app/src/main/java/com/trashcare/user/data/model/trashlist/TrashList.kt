@@ -1,4 +1,4 @@
-package com.trashcare.user.data.DataListTrash
+package com.trashcare.user.data.model.trashlist
 
 
 import com.trashcare.user.R
