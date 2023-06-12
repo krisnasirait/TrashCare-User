@@ -42,11 +42,10 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
             }
-
-            binding.tvRegLog.setOnClickListener {
-                val intent = Intent(this, RegisterActivity::class.java)
-                startActivity(intent)
-            }
+        }
+        binding.tvRegLog.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 }
