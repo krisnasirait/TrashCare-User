@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.activity.DetailTrashActivity">
+
+    <ImageView
+        android:id="@+id/iv_background_detail"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:src="@drawable/background_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:background="@null"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="backButton" />
+
+    <TextView
+        android:id="@+id/tv_detail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_background_detail"
+        tools:text="Kertas/Kardus" />
+
+    <ImageView
+        android:id="@+id/iv_img_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="153dp"
+        android:layout_marginEnd="21dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/cardboard_picture" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="115dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/desc"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_detail_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_title" />
+
+    <TextView
+        android:id="@+id/tv_detail_desc"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginTop="25dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_desc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc"
+        tools:text="Trash Care menerima berbagai macam kertas dan kardus. Pastikan sebelum dikirim, kertas dan kardus dalam keadaan bersih agar memudahkan proses daur ulang" />
+
+
+    <ImageView
+        android:id="@+id/iv_pcs_info"
+        android:layout_width="162dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="47dp"
+        android:src="@drawable/pcs_info_img"
+        app:layout_constraintStart_toStartOf="@+id/tv_detail_desc"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_desc" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/info_detail"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="@+id/iv_pcs_info"
+        app:layout_constraintTop_toBottomOf="@+id/iv_pcs_info" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

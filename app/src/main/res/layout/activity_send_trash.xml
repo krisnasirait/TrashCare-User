@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.activity.SendTrashActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/previewImageView"
+            android:layout_width="387dp"
+            android:layout_height="456dp"
+            android:layout_marginTop="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_image_24"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/btn_cameraX"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/camera_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/previewImageView"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Camera"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_cameraX"
+            app:layout_constraintStart_toStartOf="@+id/btn_cameraX"
+            app:layout_constraintTop_toBottomOf="@+id/btn_cameraX" />
+
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/desc"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_camera" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_addDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapSentences|textMultiLine"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="17dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:hint="@string/hint_addDesc"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:maxLines="6"
+            android:scrollbars="vertical" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="19dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/tv_name"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_addDesc" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            android:contentDescription="@string/hint_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:startIconDrawable="@drawable/baseline_person_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_addName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_name"
+                android:inputType="text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_noPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="20dp"
+            android:text="@string/tv_noPhone"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/nameEditTextLayout" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_noPhone"
+            app:startIconDrawable="@drawable/baseline_phone_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edd_addNoPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/hint_nophone"
+                android:inputType="phone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_noRekening"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/tv_norekening"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_noPhone"
+            app:layout_constraintTop_toBottomOf="@id/phoneEditTextLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/rekeningEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_noRekening"
+            app:startIconDrawable="@drawable/baseline_account_balance_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_addRekening"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:hint="@string/hint_rekening"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/choseLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginTop="24dp"
+            android:text="@string/select_trash_location"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/rekeningEditTextLayout"
+            app:layout_constraintTop_toBottomOf="@+id/rekeningEditTextLayout" />
+
+        <ImageButton
+            android:id="@+id/btn_selectLocation"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/select_location_img"
+            app:layout_constraintStart_toEndOf="@id/choseLocation"
+            app:layout_constraintTop_toTopOf="@id/choseLocation"
+            app:layout_constraintBottom_toBottomOf="@id/choseLocation"
+            tools:ignore="ContentDescription" />
+
+
+        <TextView
+            android:id="@+id/tv_totalTrash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_trash"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/choseLocation"
+            app:layout_constraintStart_toStartOf="@id/choseLocation"/>
+
+        <ImageView
+            android:id="@+id/iv_bottle_total_trash"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/img_bottle_total_trash"
+            app:layout_constraintTop_toBottomOf="@+id/tv_totalTrash"
+            app:layout_constraintStart_toStartOf="@+id/tv_totalTrash"/>
+
+        <TextView
+            android:id="@+id/tv_totalPcsTrash"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            tools:text="3 Pcs"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="3dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_bottle_total_trash"
+            app:layout_constraintTop_toTopOf="@+id/iv_bottle_total_trash"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_bottle_total_trash"/>
+
+        <ImageView
+            android:id="@+id/iv_location_trash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/baseline_location_on_24"
+            app:layout_constraintTop_toBottomOf="@+id/iv_bottle_total_trash"
+            app:layout_constraintStart_toStartOf="@+id/iv_bottle_total_trash"/>
+
+
+        <TextView
+            android:id="@+id/tv_locationTrash"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:text="Tidak ada Lokasi"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="3dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_location_trash"
+            app:layout_constraintTop_toTopOf="@+id/iv_location_trash"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_location_trash"/>
+
+
+        <Button
+            android:id="@+id/btn_sendTrash"
+            android:layout_width="100dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="102dp"
+            android:layout_marginBottom="80dp"
+            android:layout_marginTop="66dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/button_rounded"
+            android:backgroundTint="@color/green_600"
+            android:text="@string/send_trash"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_selectLocation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,3 +1,55 @@
 <resources>
     <string name="app_name">TrashCare-User</string>
+    <string name="trashcare_splash">TrashCare</string>
+    <string name="onboard_text">Earn from \nyour waste.</string>
+    <string name="button_onboard">Get started</string>
+    <string name="text_inputdata">Sebelum lanjut, Masukan Datamu terlebih dahulu !</string>
+    <string name="tv_name">Nama</string>
+    <string name="hint_name">Masukan nama anda</string>
+    <string name="tv_noPhone">No Telepon</string>
+    <string name="hint_nophone">Masukan No Telepon anda</string>
+    <string name="tv_norekening">No Rekening</string>
+    <string name="hint_rekening">Masukan No Rekening Anda</string>
+    <string name="submit_data">Submit</string>
+    <string name="tv_check">Pastikan data yang di input sudah benar ya!</string>
+    <string name="tv_welcome">Hi! Selamat Datang\ndi Trasch Care</string>
+    <string name="tv_addtrash">Kirim Sampahmu disini</string>
+    <string name="txt_btnSendTrash">Kirim Sampah</string>
+    <string name="tv_detection">Deteksi sampahmu disini</string>
+    <string name="txt_btnDetectionTrash">Deteksi Sampah</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hello">Hello</string>
+    <string name="welcome_to_trash_care">Welcome To Trash Care</string>
+    <string name="let_s_recycle">Let\'s Recycle!</string>
+    <string name="txt_desc_trash">Trash Care menerima botol plastik untuk di daur ulang</string>
+    <string name="title_trash_botle_plasstic">Botol Plastik</string>
+    <string name="txt_detail_button_trash">Detail</string>
+    <string name="total_pcs_trash">Total = %1$d pcs </string>
+    <string name="total_pcs_trash_no_value">Total = 0 pcs </string>
+    <string name="info_detail">*Pastikan pada saat memfoto sampah dengan jelas agar lebih mudah terdeteksi oleh sistem</string>
+    <string name="desc">Deskripsi</string>
+    <string name="tv_login">Login</string>
+    <string name="email">Email</string>
+    <string name="email_hint">Masukan email anda</string>
+    <string name="password">Password</string>
+    <string name="hint_password">Masukan password anda</string>
+    <string name="dont_have_account">Belum punya akun?</string>
+    <string name="btn_login">Masuk</string>
+    <string name="regLog">Register!</string>
+    <string name="register">Register</string>
+    <string name="hint_addDesc">Tambahkan deskripsi disini</string>
+    <string name="select_trash_location">Pilih lokasi tempat sampah</string>
+    <string name="total_trash">Total Sampah</string>
+    <string name="send_trash">Kirim</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="no_location">Tidak ada lokasi</string>
+
+    <string name="failedToTakePic">Failed to take a picture</string>
+    <string name="failShowCamera">Failed to show camera.</string>
+
 </resources>

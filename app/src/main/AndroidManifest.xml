@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
     <application
         android:name=".TrashCareUserApp"
         android:allowBackup="true"
@@ -14,7 +24,50 @@
         android:theme="@style/Theme.TrashCareUser"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.activity.CameraActivity"
+            android:exported="false" />
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDHluxzVV8M4uDFxOhylUWqNaTboexKJLw" />
+
+        <activity
+            android:name=".presentation.activity.MapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".presentation.activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.SendTrashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.DetailTrashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.InputDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.OnboardPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +75,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".presentation.activity.MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
