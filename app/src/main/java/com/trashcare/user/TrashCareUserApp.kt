@@ -5,8 +5,11 @@ import android.app.Application
 import android.content.Context
 import com.trashcare.user.data.remote.ApiService
 import com.trashcare.user.data.remote.RetrofitClient
+import com.trashcare.user.data.repository.UserRepository
+import com.trashcare.user.presentation.viewmodel.AuthViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.GlobalContext
 import org.koin.dsl.module
 
@@ -21,13 +24,19 @@ class TrashCareUserApp : Application() {
             androidLogger()
             androidContext(this@TrashCareUserApp)
             modules(
-                repositoryModule
+                repositoryModule,
+                vmModule
             )
         }
     }
 
+    private val vmModule = module {
+        viewModel { AuthViewModel(get()) }
+    }
+
     private val repositoryModule = module {
         single { RetrofitClient.createService<ApiService>() }
+        single { UserRepository(get()) }
     }
 
     companion object {
