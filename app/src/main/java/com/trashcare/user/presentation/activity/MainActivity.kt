@@ -3,7 +3,6 @@ package com.trashcare.user.presentation.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openCamera() {
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        val takePictureIntent = Intent(this, CameraActivity::class.java)
         startActivity(takePictureIntent)
     }
 }

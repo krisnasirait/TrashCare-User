@@ -3,6 +3,7 @@ package com.trashcare.user.presentation.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.trashcare.user.R
@@ -24,6 +25,12 @@ class LoginActivity : AppCompatActivity() {
 
         setUpLoginAction()
         setupObserver()
+
+        val token = authViewModel.getToken()
+        if (token != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
@@ -56,10 +63,17 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupObserver() {
-        authViewModel.loginUser.observe(this) {
-            Toast.makeText(this, "Login success", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        authViewModel.loginUser.observe(this) { response ->
+            if (response != null){
+                val token = response.token
+                Log.d("LoginActivity", "Received token: $token")
+                authViewModel.saveToken(token)
+                Toast.makeText(this, "Login success", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Token null", Toast.LENGTH_SHORT).show()
+            }
         }
 
 

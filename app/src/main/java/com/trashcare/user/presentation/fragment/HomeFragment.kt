@@ -6,13 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.trashcare.user.R
 import com.trashcare.user.data.model.trashlist.dummyTrashList
 import com.trashcare.user.databinding.FragmentHomeBinding
+import com.trashcare.user.presentation.activity.LoginActivity
 import com.trashcare.user.presentation.activity.SendTrashActivity
 import com.trashcare.user.presentation.adapter.TrashListAdapter
+import com.trashcare.user.presentation.viewmodel.AuthViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 @Suppress("DEPRECATION")
@@ -24,6 +28,7 @@ class HomeFragment : Fragment(
     private val binding get() = _binding!!
     private lateinit var rvTrash: RecyclerView
     private var totalTrash: Int = 0
+    private val authViewModel: AuthViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,9 +56,15 @@ class HomeFragment : Fragment(
         rvTrash.layoutManager = LinearLayoutManager(requireActivity())
 
         binding.btnSendTrash.setOnClickListener {
-//            findNavController().navigate(R.id.home_to_camera)
             val intent = Intent(requireActivity(), SendTrashActivity::class.java)
             intent.putExtra("TOTAL_AMOUNT", totalTrash)
+            startActivity(intent)
+        }
+
+        binding.btnLogout.setOnClickListener {
+            authViewModel.clearToken()
+            Toast.makeText(requireActivity(), "Logout berhasil!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireActivity(), LoginActivity::class.java)
             startActivity(intent)
         }
     }

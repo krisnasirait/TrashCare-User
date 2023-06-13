@@ -33,6 +33,21 @@ class AuthViewModel(
     private val _errorMessage = MutableLiveData<String>()
     val errorMessage: LiveData<String> = _errorMessage
 
+//    val isLoggedIn: Boolean
+//        get() = userRepository.isLoggedIn()
+
+    fun saveToken(token: String) {
+        userRepository.saveToken(token)
+    }
+
+    fun getToken(): String? {
+        return userRepository.getToken()
+    }
+
+    fun clearToken() {
+        userRepository.clearToken()
+    }
+
     private fun handleRegistrationError(response: Response<RegisterResponse>) {
         val errorMessage = response.errorBody()?.string()
         if (errorMessage != null) {
