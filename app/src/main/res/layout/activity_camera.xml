@@ -23,6 +23,18 @@
         app:srcCompat="@drawable/baseline_cameraswitch_24" />
 
     <ImageButton
+        android:id="@+id/galleryPick"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/baseline_add_photo_alternate_24" />
+
+    <ImageButton
         android:id="@+id/captureImage"
         android:layout_width="85dp"
         android:layout_height="85dp"
@@ -31,6 +43,7 @@
         app:layout_constraintEnd_toEndOf="@id/viewFinder"
         app:layout_constraintStart_toStartOf="parent"
         android:scaleType="fitCenter"
+        android:layout_marginBottom="10dp"
         app:srcCompat="@drawable/camera_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.fragment.CameraFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Fragment Camera" />
+        android:layout_height="match_parent" />
 
-</FrameLayout>
+    <ImageButton
+        android:id="@+id/cameraSwitch"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_cameraswitch_24" />
+
+    <ImageButton
+        android:id="@+id/galleryPick"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/baseline_add_photo_alternate_24" />
+
+    <ImageButton
+        android:id="@+id/captureImage"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/viewFinder"
+        app:layout_constraintStart_toStartOf="parent"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="10dp"
+        app:srcCompat="@drawable/camera_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

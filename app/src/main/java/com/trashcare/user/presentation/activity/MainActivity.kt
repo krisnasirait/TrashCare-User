@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         bottomNav.setOnNavigationItemSelectedListener {
             when(it.itemId) {
                 R.id.action_camera -> {
-                    openCamera()
+                    navController.navigate(R.id.action_camera)
                     true
                 }
                 R.id.action_home -> {
