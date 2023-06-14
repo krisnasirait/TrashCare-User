@@ -31,12 +31,32 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             val email = binding.edEmailRegister.text.toString()
             val password = binding.edPasswordRegister.text.toString()
+            val name = binding.edNameRegister.text.toString()
+            val noTelp = binding.edNoTelpRegister.text.toString()
+            val nameBank = binding.edNameBank.text.toString()
+            val nameAccountBank = binding.edAccountNameBank.text.toString()
+            val noRekening = binding.edNoRekening.text.toString()
             when {
                 email.isEmpty() -> {
                     binding.edEmailRegister.error = resources.getString(R.string.emailEmptyError)
                 }
                 password.isEmpty() -> {
                     binding.edPasswordRegister.error = resources.getString(R.string.passwordEmptyError)
+                }
+                name.isEmpty() -> {
+                    binding.edPasswordRegister.error = resources.getString(R.string.nameEmptyError)
+                }
+                noTelp.isEmpty() -> {
+                    binding.edPasswordRegister.error = resources.getString(R.string.noTelpEmptyError)
+                }
+                nameBank.isEmpty() -> {
+                    binding.edPasswordRegister.error = resources.getString(R.string.nameBankEmptyError)
+                }
+                nameAccountBank.isEmpty() -> {
+                    binding.edPasswordRegister.error = resources.getString(R.string.nameAccountBankEmptyError)
+                }
+                noRekening.isEmpty() -> {
+                    binding.edPasswordRegister.error = resources.getString(R.string.noRekEmptyError)
                 }
                 !EmailValidation.isEmailValid(email) -> {
                     binding.edEmailRegister.error = resources.getString(R.string.formatEmailWrong)
@@ -45,7 +65,7 @@ class RegisterActivity : AppCompatActivity() {
                     binding.edPasswordRegister.error = resources.getString(R.string.lengthPasswordWrong)
                 }
                 else -> {
-                   authViewModel.registerUser(RegisterRequestBody(email, password))
+                   authViewModel.registerUser(RegisterRequestBody(email, password, name, noTelp, nameBank, nameAccountBank, noRekening))
                 }
             }
         }

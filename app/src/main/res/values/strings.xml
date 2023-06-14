@@ -57,5 +57,17 @@
     <string name="passwordEmptyError">Masukan password terlebih dahulu</string>
     <string name="formatEmailWrong">Format email salah</string>
     <string name="lengthPasswordWrong">Panjang karakter minimal 6</string>
+    <string name="nameEmptyError">Masukan Nama terlebih dahulu</string>
+    <string name="noTelpEmptyError">Masukan No Telepon terlebih dahulu</string>
+    <string name="nameBankEmptyError">Masukan Nama Bank terlebih dahulu</string>
+    <string name="nameAccountBankEmptyError">Masukan Nama Akun Bank terlebih dahulu</string>
+    <string name="noRekEmptyError">Masukan No Rekening Bank terlebih dahulu</string>
+
+
+
+    <string name="bank_name">Nama Bank</string>
+    <string name="name_bank">Masukan nama Bank Anda</string>
+    <string name="accountNameBank">Nama Akun Bank</string>
+    <string name="accountNameBank_hint">Masukan atas nama akun Bank anda</string>
 
 </resources>
