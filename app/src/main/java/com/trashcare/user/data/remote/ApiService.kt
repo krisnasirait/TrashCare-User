@@ -6,18 +6,17 @@ import com.trashcare.user.data.model.response.login.LoginResponse
 import com.trashcare.user.data.model.response.register.RegisterResponse
 import retrofit2.Response
 import retrofit2.http.Body
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
 
 interface ApiService {
-    @POST("register")
+    @POST("apiloginregister/register")
     suspend fun registerUser(
         @Body registerRequestBody: RegisterRequestBody
     ): Response<RegisterResponse>
 
 
-    @POST("login")
+    @POST("apiloginregister/login")
     suspend fun loginUser(
         @Body loginRequestBody: LoginRequestBody
     ): Response<LoginResponse>

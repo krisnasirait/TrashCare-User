@@ -19,7 +19,7 @@ object RetrofitClient {
     private val retrofitBuilder = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
     val retrofit: Retrofit = retrofitBuilder
-        .baseUrl("https://us-central1-trashcare-387803.cloudfunctions.net/apiloginregister/")
+        .baseUrl("https://us-central1-trashcare-387803.cloudfunctions.net/")
         .client(clientBuilder.build())
         .build()
 
