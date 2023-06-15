@@ -69,5 +69,6 @@
     <string name="name_bank">Masukan nama Bank Anda</string>
     <string name="accountNameBank">Nama Akun Bank</string>
     <string name="accountNameBank_hint">Masukan atas nama akun Bank anda</string>
+    <string name="is_verification">Is Verification :</string>
 
 </resources>
