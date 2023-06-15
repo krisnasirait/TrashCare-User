@@ -52,7 +52,7 @@
     <string name="failedToTakePic">Failed to take a picture</string>
     <string name="failShowCamera">Failed to show camera.</string>
     <string name="logout">Logout</string>
-    
+
     <string name="emailEmptyError">Masukan email terlebih dahulu</string>
     <string name="passwordEmptyError">Masukan password terlebih dahulu</string>
     <string name="formatEmailWrong">Format email salah</string>
@@ -65,7 +65,6 @@
     <string name="descriptionEmptyError">Deskripsi tidak boleh kosong</string>
 
 
-
     <string name="bank_name">Nama Bank</string>
     <string name="name_bank">Masukan nama Bank Anda</string>
     <string name="accountNameBank">Nama Akun Bank</string>
@@ -73,5 +72,9 @@
     <string name="is_verification">Is Verification :</string>
     <string name="total_history">Jumlah :</string>
     <string name="status">Status :</string>
+    <string name="tv_success">Yeay! Kamu berhasil mengirim sampah</string>
+    <string name="info_success">Admin akan memverifikasi sampah kamu, mohon bersabar ya!</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
 
 </resources>

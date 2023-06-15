@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
@@ -95,7 +96,12 @@ class SendTrashActivity : AppCompatActivity() {
         }
 
         sendTrashViewModel.sendTrash.observe(this) {
-            Toast.makeText(this, "Kirim Sampah Berhasil", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, PopUpSuccessActivity::class.java)
+            startActivity(intent)
+        }
+
+        sendTrashViewModel.isLoading.observe(this) {
+            showLoading(it)
         }
 
         sendTrash()
@@ -155,6 +161,14 @@ class SendTrashActivity : AppCompatActivity() {
 
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun showLoading(isLoading:Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
     }
 
     companion object {

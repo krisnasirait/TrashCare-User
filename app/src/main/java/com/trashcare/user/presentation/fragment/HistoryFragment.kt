@@ -48,13 +48,26 @@ class HistoryFragment : Fragment() {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = historyListAdapter
         }
+
+        if (historyListAdapter.itemCount == 0) {
+            binding.noData.visibility = View.VISIBLE
+        } else {
+            binding.noData.visibility = View.GONE
+        }
+
     }
 
     private fun setupViewModelObservers() {
         historyViewModel.getHistory(userId)
 
-        historyViewModel.historyUser.observe(viewLifecycleOwner){
-            historyListAdapter.setData(it)
+        historyViewModel.historyUser.observe(viewLifecycleOwner){ data ->
+            historyListAdapter.setData(data)
+
+            if (data.isEmpty()) {
+                binding.noData.visibility = View.VISIBLE
+            } else {
+                binding.noData.visibility = View.GONE
+            }
         }
     }
 
