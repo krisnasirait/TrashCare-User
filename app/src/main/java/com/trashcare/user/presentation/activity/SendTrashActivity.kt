@@ -1,6 +1,7 @@
 package com.trashcare.user.presentation.activity
 
 import android.Manifest
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
@@ -12,6 +13,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.trashcare.user.R
+import com.trashcare.user.data.model.trashdata.TrashData
 import com.trashcare.user.databinding.ActivitySendTrashBinding
 import com.trashcare.user.presentation.viewmodel.SendTrashViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -25,6 +27,18 @@ class SendTrashActivity : AppCompatActivity() {
     private lateinit var userId: String
     private var _markerData: String? = null
     private var _totalTrash: Int? = null
+
+    private val selectLocationLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val data: Intent? = result.data
+            val markerData = data?.getStringExtra(MapsActivity.MARKER_ADD)
+
+            if (markerData != null) {
+                _markerData = markerData
+                binding.tvLocationTrash.text = markerData
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +56,7 @@ class SendTrashActivity : AppCompatActivity() {
 
         val markerData = intent.getStringExtra(MARKER_ADD)
         val totalTrash = intent.getIntExtra("TOTAL_AMOUNT", 0)
+        _totalTrash  = totalTrash
 
 //        if (markerData != null) {
 //            this._markerData = markerData
@@ -50,7 +65,7 @@ class SendTrashActivity : AppCompatActivity() {
 
         binding.btnSelectLocation.setOnClickListener {
             val intent = Intent(this, MapsActivity::class.java)
-            startActivity(intent)
+            selectLocationLauncher.launch(intent)
         }
 
         binding.btnCameraX.setOnClickListener {
@@ -67,41 +82,46 @@ class SendTrashActivity : AppCompatActivity() {
 
         binding.tvTotalPcsTrash.text = resources.getString(R.string.total_pcs_trash, totalTrash)
 
-//        val getToken = sendTrashViewModel.getToken()
-//        val getUserId = sendTrashViewModel.getUserId()
-//
-//        if (getToken.isNullOrEmpty()) {
-//            val intent = Intent(this, LoginActivity::class.java)
-//            startActivity(intent)
-//        } else {
-//            this.token = getToken
-//        }
-//
-//        if (getUserId.isNullOrEmpty()) {
-//            val intent = Intent(this, LoginActivity::class.java)
-//            startActivity(intent)
-//        } else {
-//            this.userId = getUserId
-//        }
+        val getToken = sendTrashViewModel.getToken()
+        val getUserId = sendTrashViewModel.getUserId()
 
-//        sendTrashViewModel.sendTrash.observe(this) {
-//            Toast.makeText(this, "Kirim Sampah Berhasil", Toast.LENGTH_SHORT).show()
-//        }
+        if (getToken.isNullOrEmpty()) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        } else {
+            this.token = getToken
+        }
 
-//        sendTrash()
+        if (getUserId.isNullOrEmpty()) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        } else {
+            this.userId = getUserId
+        }
+
+        sendTrashViewModel.sendTrash.observe(this) {
+            Toast.makeText(this, "Kirim Sampah Berhasil", Toast.LENGTH_SHORT).show()
+        }
+
+        sendTrash()
 
     }
 
-//    private fun sendTrash() {
-//        binding.btnSendTrash.setOnClickListener {
-//            val description = binding.edDescription.text.toString()
-//            if (description.isEmpty()) {
-//                binding.edDescription.error = resources.getString(R.string.descriptionEmptyError)
-//            } else {
-//                sendTrashViewModel.sendTrash(token, userId, description, _markerData ?: "", _totalTrash ?: 0)
-//            }
-//        }
-//    }
+    private fun sendTrash() {
+        binding.btnSendTrash.setOnClickListener {
+            val description = binding.edDescription.text.toString()
+            if (description.isEmpty()) {
+                binding.edDescription.error = resources.getString(R.string.descriptionEmptyError)
+            } else {
+                sendTrashViewModel.sendTrash(
+                    token,
+                    userId,
+                    TrashData(description, _markerData ?: "", _totalTrash ?: 0)
+                )
+            }
+            Toast.makeText(this, "Send trash clicked", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     private val launcherIntentCameraX = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()

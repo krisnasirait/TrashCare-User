@@ -39,7 +39,7 @@ class TrashCareUserApp : Application() {
 
     private val repositoryModule = module {
         single { RetrofitClient.createService<ApiService>() }
-        single { UserRepository(get(), get()) }
+        single { UserRepository(get()) }
         single { TrashRepository(get()) }
     }
 

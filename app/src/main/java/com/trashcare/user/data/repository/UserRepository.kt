@@ -3,6 +3,7 @@ package com.trashcare.user.data.repository
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import com.trashcare.user.TrashCareUserApp
 import com.trashcare.user.data.model.request.LoginRequestBody
 import com.trashcare.user.data.model.request.RegisterRequestBody
 import com.trashcare.user.data.model.response.login.LoginResponse
@@ -12,12 +13,11 @@ import retrofit2.Response
 
 
 class UserRepository (
-    private val apiService: ApiService,
-    private val context: Context
+    private val apiService: ApiService
         ) {
 
     private val sharedPreferences: SharedPreferences by lazy {
-        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        TrashCareUserApp.context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
     }
     suspend fun registerUser(registerRequestBody: RegisterRequestBody) : Response<RegisterResponse> {
         return apiService.registerUser(registerRequestBody)

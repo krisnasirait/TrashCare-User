@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.trashcare.user.data.model.response.sendtrash.SendTrashResponse
+import com.trashcare.user.data.model.trashdata.TrashData
 import com.trashcare.user.data.repository.TrashRepository
 import com.trashcare.user.data.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
@@ -47,11 +48,12 @@ class SendTrashViewModel(
         }
     }
 
-    fun sendTrash(token: String, userId: String, description: String, location: String, amount: Int) {
+    fun sendTrash(token: String, userId: String, trashData: TrashData) {
         _isLoading.postValue(true)
+        Log.d("sendTrashCalled", "sendTrash: in view model")
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
-                trashRepository.sendTrash(token, userId, description, location, amount)
+                trashRepository.sendTrash(token, userId, trashData)
             }.onSuccess { response ->
                 withContext(Dispatchers.Main) {
                     if (response.isSuccessful) {

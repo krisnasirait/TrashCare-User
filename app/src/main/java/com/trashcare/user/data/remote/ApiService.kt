@@ -5,10 +5,12 @@ import com.trashcare.user.data.model.request.RegisterRequestBody
 import com.trashcare.user.data.model.response.login.LoginResponse
 import com.trashcare.user.data.model.response.register.RegisterResponse
 import com.trashcare.user.data.model.response.sendtrash.SendTrashResponse
+import com.trashcare.user.data.model.trashdata.TrashData
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.Header
+import retrofit2.http.Headers
 import retrofit2.http.POST
 
 
@@ -24,13 +26,13 @@ interface ApiService {
         @Body loginRequestBody: LoginRequestBody
     ): Response<LoginResponse>
 
+
+    @Headers("Content-Type: application/json")
     @POST("apisubmittrash/submittrash")
-    suspend fun submitTrash(
-        @Header("Authorization") Authorization: String,
+    suspend fun sendTrash(
+        @Header("Authorization") token: String,
         @Header("userId") userId: String,
-        @Field("description") description: String,
-        @Field("location") location: String?,
-        @Field("amount") amount: Int?,
+        @Body trashData: TrashData
     ): Response<SendTrashResponse>
 
 }
