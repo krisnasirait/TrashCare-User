@@ -58,11 +58,6 @@ class SendTrashActivity : AppCompatActivity() {
         val totalTrash = intent.getIntExtra("TOTAL_AMOUNT", 0)
         _totalTrash  = totalTrash
 
-//        if (markerData != null) {
-//            this._markerData = markerData
-//        }
-//        this._totalTrash = totalTrash
-
         binding.btnSelectLocation.setOnClickListener {
             val intent = Intent(this, MapsActivity::class.java)
             selectLocationLauncher.launch(intent)
@@ -119,7 +114,6 @@ class SendTrashActivity : AppCompatActivity() {
                     TrashData(description, _markerData ?: "", _totalTrash ?: 0)
                 )
             }
-            Toast.makeText(this, "Send trash clicked", Toast.LENGTH_SHORT).show()
         }
     }
 

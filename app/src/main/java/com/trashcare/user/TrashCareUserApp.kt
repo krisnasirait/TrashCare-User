@@ -8,6 +8,7 @@ import com.trashcare.user.data.remote.RetrofitClient
 import com.trashcare.user.data.repository.TrashRepository
 import com.trashcare.user.data.repository.UserRepository
 import com.trashcare.user.presentation.viewmodel.AuthViewModel
+import com.trashcare.user.presentation.viewmodel.HistoryViewModel
 import com.trashcare.user.presentation.viewmodel.SendTrashViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -35,6 +36,7 @@ class TrashCareUserApp : Application() {
     private val vmModule = module {
         viewModel { AuthViewModel(get()) }
         viewModel { SendTrashViewModel(get(), get()) }
+        viewModel { HistoryViewModel(get(), get()) }
     }
 
     private val repositoryModule = module {

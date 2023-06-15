@@ -5,17 +5,57 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.trashcare.user.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.trashcare.user.databinding.FragmentHistoryBinding
+import com.trashcare.user.presentation.adapter.HistoryListAdapter
+import com.trashcare.user.presentation.viewmodel.HistoryViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class HistoryFragment : Fragment() {
 
+    private var _binding: FragmentHistoryBinding?= null
+    private val binding get() = _binding!!
+    private lateinit var userId: String
+    private val historyViewModel: HistoryViewModel by viewModel()
+    private lateinit var historyListAdapter: HistoryListAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history, container, false)
+        _binding = FragmentHistoryBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        val getUserId = historyViewModel.getUserId()
+        userId = getUserId ?: ""
+
+        setupRecyclerView()
+        setupViewModelObservers()
+
+
+    }
+
+    private fun setupRecyclerView() {
+        historyListAdapter = HistoryListAdapter()
+        binding.rvHistory.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            adapter = historyListAdapter
+        }
+    }
+
+    private fun setupViewModelObservers() {
+        historyViewModel.getHistory(userId)
+
+        historyViewModel.historyUser.observe(viewLifecycleOwner){
+            historyListAdapter.setData(it)
+        }
     }
 
 }
