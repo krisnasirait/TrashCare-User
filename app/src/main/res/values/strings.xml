@@ -62,6 +62,7 @@
     <string name="nameBankEmptyError">Masukan Nama Bank terlebih dahulu</string>
     <string name="nameAccountBankEmptyError">Masukan Nama Akun Bank terlebih dahulu</string>
     <string name="noRekEmptyError">Masukan No Rekening Bank terlebih dahulu</string>
+    <string name="descriptionEmptyError">Deskripsi tidak boleh kosong</string>
 
 
 

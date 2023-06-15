@@ -45,6 +45,23 @@ class UserRepository (
         editor.apply()
     }
 
+
+    fun saveUserId(userId: String) {
+        val editor = sharedPreferences.edit()
+        editor.putString(USER_ID_KEY, userId)
+        editor.apply()
+    }
+
+    fun getUserId(): String? {
+        return sharedPreferences.getString(USER_ID_KEY, null)
+    }
+
+    fun clearUserId() {
+        val editor = sharedPreferences.edit()
+        editor.remove(USER_ID_KEY)
+        editor.apply()
+    }
+
 //    fun setLoggedInStatus(isLoggedIn: Boolean) {
 //        val editor = sharedPreferences.edit()
 //        editor.putBoolean(LOGIN_STATUS_KEY, isLoggedIn)
@@ -59,6 +76,7 @@ class UserRepository (
     companion object {
         private const val PREFS_NAME = "MyPrefsFile"
         private const val TOKEN_KEY = "token"
+        private const val USER_ID_KEY = "user_id"
 //        private const val LOGIN_STATUS_KEY = "login_status"
     }
 }

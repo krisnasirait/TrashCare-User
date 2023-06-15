@@ -27,7 +27,13 @@ class LoginActivity : AppCompatActivity() {
         setupObserver()
 
         val token = authViewModel.getToken()
+        val userId = authViewModel.getUserId()
         if (token != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+        if (userId != null) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -66,13 +72,15 @@ class LoginActivity : AppCompatActivity() {
         authViewModel.loginUser.observe(this) { response ->
             if (response != null){
                 val token = response.token
+                val userId = response.userId
                 Log.d("LoginActivity", "Received token: $token")
                 authViewModel.saveToken(token)
+                authViewModel.saveUserId(userId)
                 Toast.makeText(this, "Login success", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "Token null", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Token and userId null", Toast.LENGTH_SHORT).show()
             }
         }
 

@@ -63,6 +63,7 @@ class HomeFragment : Fragment(
 
         binding.btnLogout.setOnClickListener {
             authViewModel.clearToken()
+            authViewModel.clearUserId()
             Toast.makeText(requireActivity(), "Logout berhasil!", Toast.LENGTH_SHORT).show()
             val intent = Intent(requireActivity(), LoginActivity::class.java)
             startActivity(intent)
