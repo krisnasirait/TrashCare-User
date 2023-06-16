@@ -3,8 +3,8 @@ TrashCare Capstone Project User App This project was done to make people more aw
 
 
 ## Screenshots app
-[Login and register](https://imgur.com/2wtNz5G)
-[Home and Send Trash](https://imgur.com/lCUYlR4)
+[Login and register](https://imgur.com/2wtNz5G), 
+[Home and Send Trash](https://imgur.com/lCUYlR4), 
 [History](https://imgur.com/M9zDNYo)
 
 
